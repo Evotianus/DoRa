@@ -128,7 +128,7 @@ class LocationCard extends StatelessWidget {
                     Stack(
                       children: [
                         Container(
-                          width: deviceWidthWithoutPadding - 125,
+                          width: deviceWidthWithoutPadding - 135,
                           height: 5,
                           decoration: BoxDecoration(
                             color: Palette.secondaryColor,
@@ -136,7 +136,7 @@ class LocationCard extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          width: (deviceWidthWithoutPadding - 125) *
+                          width: (deviceWidthWithoutPadding - 135) *
                               progress, // Calculate width based on progress
                           height: 5,
                           decoration: BoxDecoration(
@@ -156,7 +156,7 @@ class LocationCard extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(
-                          width: 155,
+                          width: 135,
                         ),
                         Text(
                           "$total Liter",

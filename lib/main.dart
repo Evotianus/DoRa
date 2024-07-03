@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         scaffoldBackgroundColor: Palette.whiteColor,
+        fontFamily: 'montserrat',
       ),
       debugShowCheckedModeBanner: false,
       title: 'DoRa App',

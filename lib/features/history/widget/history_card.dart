@@ -20,7 +20,7 @@ class HistoryCard extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: 50,
+          width: 55,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -77,7 +77,7 @@ class HistoryCard extends StatelessWidget {
                     Text(
                       title,
                       style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 14),
+                          fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                     const SizedBox(
                       height: 4,
@@ -99,7 +99,7 @@ class HistoryCard extends StatelessWidget {
                           color: isVerified
                               ? Palette.primaryColor
                               : Palette.whiteColor,
-                          fontSize: 11,
+                          fontSize: 10,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
