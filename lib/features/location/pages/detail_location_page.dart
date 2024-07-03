@@ -23,22 +23,27 @@ class DetailLocationPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Row(
-              children: [
-                Icon(
-                  Icons.arrow_back_rounded,
-                  size: 20,
-                  color: Palette.primaryColor,
-                ),
-                SizedBox(width: 20),
-                Text(
-                  'Stok Darah',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: const Row(
+                children: [
+                  Icon(
+                    Icons.arrow_back_rounded,
+                    size: 20,
+                    color: Palette.primaryColor,
                   ),
-                ),
-              ],
+                  SizedBox(width: 20),
+                  Text(
+                    'Stok Darah',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 64),
             const Text(

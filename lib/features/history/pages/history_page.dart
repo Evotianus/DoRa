@@ -22,8 +22,8 @@ class HistoryPage extends StatelessWidget {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          const SingleChildScrollView(
-            padding: EdgeInsets.symmetric(
+          SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(
               horizontal: 24.0,
               vertical: 52.0,
             ),
@@ -31,13 +31,18 @@ class HistoryPage extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(
-                      Icons.arrow_back_rounded,
-                      size: 20,
-                      color: Palette.primaryColor,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Icon(
+                        Icons.arrow_back_rounded,
+                        size: 20,
+                        color: Palette.primaryColor,
+                      ),
                     ),
-                    SizedBox(width: 20),
-                    Text(
+                    const SizedBox(width: 20),
+                    const Text(
                       'History',
                       style: TextStyle(
                         fontSize: 16,
@@ -46,85 +51,85 @@ class HistoryPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 24),
-                HistoryCard(
+                const SizedBox(height: 24),
+                const HistoryCard(
                   date: '3 Jul',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',
                   isVerified: true,
                 ),
-                SizedBox(height: 8),
-                HistoryCard(
+                const SizedBox(height: 8),
+                const HistoryCard(
                   date: '2 Jul',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',
                   isVerified: false,
                 ),
-                SizedBox(height: 8),
-                HistoryCard(
+                const SizedBox(height: 8),
+                const HistoryCard(
                   date: '1 Jul',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',
                   isVerified: true,
                 ),
-                SizedBox(height: 8),
-                HistoryCard(
+                const SizedBox(height: 8),
+                const HistoryCard(
                   date: '30 Jun',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',
                   isVerified: false,
                 ),
-                SizedBox(height: 8),
-                HistoryCard(
+                const SizedBox(height: 8),
+                const HistoryCard(
                   date: '29 Jun',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',
                   isVerified: false,
                 ),
-                SizedBox(height: 8),
-                HistoryCard(
+                const SizedBox(height: 8),
+                const HistoryCard(
                   date: '28 Jun',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',
                   isVerified: false,
                 ),
-                SizedBox(height: 8),
-                HistoryCard(
+                const SizedBox(height: 8),
+                const HistoryCard(
                   date: '27 Jun',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',
                   isVerified: true,
                 ),
-                SizedBox(height: 8),
-                HistoryCard(
+                const SizedBox(height: 8),
+                const HistoryCard(
                   date: '26 Jun',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',
                   isVerified: true,
                 ),
-                SizedBox(height: 8),
-                HistoryCard(
+                const SizedBox(height: 8),
+                const HistoryCard(
                   date: '25 Jun',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',
                   isVerified: true,
                 ),
-                SizedBox(height: 8),
-                HistoryCard(
+                const SizedBox(height: 8),
+                const HistoryCard(
                   date: '24 Jun',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',
                   isVerified: true,
                 ),
-                SizedBox(height: 8),
-                HistoryCard(
+                const SizedBox(height: 8),
+                const HistoryCard(
                   date: '23 Jun',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',
                   isVerified: true,
                 ),
-                SizedBox(height: 8),
-                HistoryCard(
+                const SizedBox(height: 8),
+                const HistoryCard(
                   date: '22 Jun',
                   year: '2024',
                   title: 'Lorem ipsum dolor sit amet',

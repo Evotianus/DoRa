@@ -3,6 +3,7 @@ import 'package:dora_app/features/article/pages/article_page.dart';
 import 'package:dora_app/features/history/pages/history_page.dart';
 import 'package:dora_app/features/home/pages/home_page.dart';
 import 'package:dora_app/features/home/widget/location_card.dart';
+import 'package:dora_app/features/location/pages/detail_location_page.dart';
 import 'package:dora_app/features/location/widget/location_page_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -78,7 +79,11 @@ class LocationPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 24),
-                const LocationPageCard(
+                LocationPageCard(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const DetailLocationPage()));
+                  },
                   image: 'assets/hospital.jpeg',
                   name: 'RSUD Dr. Soetomo',
                   phone: '031-5501078',
@@ -86,7 +91,11 @@ class LocationPage extends StatelessWidget {
                       'Jl. Mayjen Prof. Dr. Moestopo No.6-8, Airlangga, Kec. Gubeng, Kota SBY, Jawa Timur 60131',
                 ),
                 const SizedBox(height: 16),
-                const LocationPageCard(
+                LocationPageCard(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const DetailLocationPage()));
+                  },
                   image: 'assets/hospital.jpeg',
                   name: 'RSUD Dr. Soetomo',
                   phone: '031-5501078',
@@ -94,7 +103,11 @@ class LocationPage extends StatelessWidget {
                       'Jl. Mayjen Prof. Dr. Moestopo No.6-8, Airlangga, Kec. Gubeng, Kota SBY, Jawa Timur 60131',
                 ),
                 const SizedBox(height: 16),
-                const LocationPageCard(
+                LocationPageCard(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const DetailLocationPage()));
+                  },
                   image: 'assets/hospital.jpeg',
                   name: 'RSUD Dr. Soetomo',
                   phone: '031-5501078',
@@ -102,7 +115,11 @@ class LocationPage extends StatelessWidget {
                       'Jl. Mayjen Prof. Dr. Moestopo No.6-8, Airlangga, Kec. Gubeng, Kota SBY, Jawa Timur 60131',
                 ),
                 const SizedBox(height: 16),
-                const LocationPageCard(
+                LocationPageCard(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const DetailLocationPage()));
+                  },
                   image: 'assets/hospital.jpeg',
                   name: 'RSUD Dr. Soetomo',
                   phone: '031-5501078',
@@ -110,7 +127,11 @@ class LocationPage extends StatelessWidget {
                       'Jl. Mayjen Prof. Dr. Moestopo No.6-8, Airlangga, Kec. Gubeng, Kota SBY, Jawa Timur 60131',
                 ),
                 const SizedBox(height: 16),
-                const LocationPageCard(
+                LocationPageCard(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const DetailLocationPage()));
+                  },
                   image: 'assets/hospital.jpeg',
                   name: 'RSUD Dr. Soetomo',
                   phone: '031-5501078',
@@ -118,7 +139,11 @@ class LocationPage extends StatelessWidget {
                       'Jl. Mayjen Prof. Dr. Moestopo No.6-8, Airlangga, Kec. Gubeng, Kota SBY, Jawa Timur 60131',
                 ),
                 const SizedBox(height: 16),
-                const LocationPageCard(
+                LocationPageCard(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const DetailLocationPage()));
+                  },
                   image: 'assets/hospital.jpeg',
                   name: 'RSUD Dr. Soetomo',
                   phone: '031-5501078',
@@ -126,7 +151,11 @@ class LocationPage extends StatelessWidget {
                       'Jl. Mayjen Prof. Dr. Moestopo No.6-8, Airlangga, Kec. Gubeng, Kota SBY, Jawa Timur 60131',
                 ),
                 const SizedBox(height: 16),
-                const LocationPageCard(
+                LocationPageCard(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const DetailLocationPage()));
+                  },
                   image: 'assets/hospital.jpeg',
                   name: 'RSUD Dr. Soetomo',
                   phone: '031-5501078',
@@ -134,7 +163,11 @@ class LocationPage extends StatelessWidget {
                       'Jl. Mayjen Prof. Dr. Moestopo No.6-8, Airlangga, Kec. Gubeng, Kota SBY, Jawa Timur 60131',
                 ),
                 const SizedBox(height: 16),
-                const LocationPageCard(
+                LocationPageCard(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const DetailLocationPage()));
+                  },
                   image: 'assets/hospital.jpeg',
                   name: 'RSUD Dr. Soetomo',
                   phone: '031-5501078',
