@@ -16,10 +16,15 @@ class DetailArticlePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Icon(
-              Icons.arrow_back,
-              size: 20,
-              color: Palette.primaryColor,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: const Icon(
+                Icons.arrow_back,
+                size: 20,
+                color: Palette.primaryColor,
+              ),
             ),
             const SizedBox(
               height: 24,

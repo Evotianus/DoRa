@@ -2,6 +2,7 @@ import 'package:dora_app/core/palette.dart';
 import 'package:dora_app/features/article/pages/article_page.dart';
 import 'package:dora_app/features/history/pages/history_page.dart';
 import 'package:dora_app/features/home/widget/location_card.dart';
+import 'package:dora_app/features/location/pages/detail_location_page.dart';
 import 'package:dora_app/features/location/pages/location_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -49,27 +50,13 @@ class HomePage extends StatelessWidget {
                               Text(
                                 "Evo",
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ],
                           ),
                         ],
-                      ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          padding: const EdgeInsets.all(12.0),
-                          decoration: BoxDecoration(
-                            color: Palette.secondaryColor,
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: const Icon(
-                            Icons.access_time_rounded,
-                            color: Palette.primaryColor,
-                          ),
-                        ),
                       ),
                     ],
                   ),
@@ -277,22 +264,28 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 12),
-                  const Column(
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Lokasi",
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
                       Column(
                         children: [
                           LocationCard(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailLocationPage(),
+                              ));
+                            },
                             image: 'assets/hospital.jpeg',
                             name: 'Rumah Sakit Hosannia',
                             time: '06:00 - 24:00',
@@ -301,8 +294,14 @@ class HomePage extends StatelessWidget {
                             progress: 0.5,
                             total: '20',
                           ),
-                          SizedBox(height: 12),
+                          const SizedBox(height: 12),
                           LocationCard(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailLocationPage(),
+                              ));
+                            },
                             image: 'assets/hospital.jpeg',
                             name: 'Rumah Sakit Ariya',
                             time: '06:00 - 24:00',

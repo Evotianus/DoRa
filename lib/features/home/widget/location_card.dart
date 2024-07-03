@@ -9,6 +9,7 @@ class LocationCard extends StatelessWidget {
   final String collected;
   final double progress;
   final String total;
+  final VoidCallback onTap;
 
   const LocationCard({
     super.key,
@@ -19,6 +20,7 @@ class LocationCard extends StatelessWidget {
     required this.collected,
     required this.progress,
     required this.total,
+    required this.onTap,
   });
 
   @override
@@ -29,144 +31,147 @@ class LocationCard extends StatelessWidget {
 
     final deviceWidthWithoutPadding = deviceWidth - 48;
 
-    return Container(
-      width: double.maxFinite,
-      padding: const EdgeInsets.all(12.0),
-      decoration: BoxDecoration(
-        color: Palette.whiteColor,
-        borderRadius: BorderRadius.circular(8.0),
-        boxShadow: [
-          BoxShadow(
-            color: Palette.blackColor.withOpacity(0.05),
-            blurRadius: 10,
-            spreadRadius: 2,
-          ),
-        ],
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 80,
-            height: 80,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Image.asset(
-                image,
-                fit: BoxFit.cover,
-              ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.maxFinite,
+        padding: const EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+          color: Palette.whiteColor,
+          borderRadius: BorderRadius.circular(8.0),
+          boxShadow: [
+            BoxShadow(
+              color: Palette.blackColor.withOpacity(0.05),
+              blurRadius: 10,
+              spreadRadius: 2,
             ),
-          ),
-          const SizedBox(width: 12),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                name,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
+          ],
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 80,
+              height: 80,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(
-                height: 4,
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.access_time_rounded,
-                    color: Palette.blackColor.withOpacity(0.4),
-                    size: 18,
+            ),
+            const SizedBox(width: 12),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  name,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
                   ),
-                  const SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    time,
-                    style: TextStyle(
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.access_time_rounded,
                       color: Palette.blackColor.withOpacity(0.4),
-                      fontSize: 13,
+                      size: 18,
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.phone_outlined,
-                    color: Palette.blackColor.withOpacity(0.4),
-                    size: 18,
-                  ),
-                  const SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    phone,
-                    style: TextStyle(
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      time,
+                      style: TextStyle(
+                        color: Palette.blackColor.withOpacity(0.4),
+                        fontSize: 13,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.phone_outlined,
                       color: Palette.blackColor.withOpacity(0.4),
-                      fontSize: 13,
+                      size: 18,
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Donor terkumpul",
-                    style: TextStyle(fontSize: 13),
-                  ),
-                  Stack(
-                    children: [
-                      Container(
-                        width: deviceWidthWithoutPadding - 125,
-                        height: 5,
-                        decoration: BoxDecoration(
-                          color: Palette.secondaryColor,
-                          borderRadius: BorderRadius.circular(8),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      phone,
+                      style: TextStyle(
+                        color: Palette.blackColor.withOpacity(0.4),
+                        fontSize: 13,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Donor terkumpul",
+                      style: TextStyle(fontSize: 13),
+                    ),
+                    Stack(
+                      children: [
+                        Container(
+                          width: deviceWidthWithoutPadding - 125,
+                          height: 5,
+                          decoration: BoxDecoration(
+                            color: Palette.secondaryColor,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
                         ),
-                      ),
-                      Container(
-                        width: (deviceWidthWithoutPadding - 125) *
-                            progress, // Calculate width based on progress
-                        height: 5,
-                        decoration: BoxDecoration(
-                          color: Palette.primaryColor,
-                          borderRadius: BorderRadius.circular(8),
+                        Container(
+                          width: (deviceWidthWithoutPadding - 125) *
+                              progress, // Calculate width based on progress
+                          height: 5,
+                          decoration: BoxDecoration(
+                            color: Palette.primaryColor,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "$collected Liter",
-                        style: const TextStyle(
-                          fontSize: 12,
-                          color: Palette.primaryColor,
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "$collected Liter",
+                          style: const TextStyle(
+                            fontSize: 12,
+                            color: Palette.primaryColor,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 155,
-                      ),
-                      Text(
-                        "$total Liter",
-                        style: const TextStyle(
-                          fontSize: 12,
+                        const SizedBox(
+                          width: 155,
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
+                        Text(
+                          "$total Liter",
+                          style: const TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
