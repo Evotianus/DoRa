@@ -6,6 +6,7 @@ import 'package:dora_app/features/authentication/pages/register_page.dart';
 import 'package:dora_app/features/authentication/pages/verification_page.dart';
 import 'package:dora_app/features/history/pages/history_page.dart';
 import 'package:dora_app/features/home/pages/home_page.dart';
+import 'package:dora_app/features/home/pages/home_page_unverified.dart';
 import 'package:dora_app/features/location/pages/detail_location_page.dart';
 import 'package:dora_app/features/location/pages/location_page.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       title: 'DoRa App',
-      home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }

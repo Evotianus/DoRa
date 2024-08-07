@@ -1,6 +1,7 @@
 import 'package:dora_app/core/palette.dart';
 import 'package:dora_app/features/article/pages/article_page.dart';
 import 'package:dora_app/features/article/pages/detail_article_page.dart';
+import 'package:dora_app/features/authentication/pages/verification_page.dart';
 import 'package:dora_app/features/history/pages/history_page.dart';
 import 'package:dora_app/features/home/widget/location_card.dart';
 import 'package:dora_app/features/location/pages/detail_location_page.dart';
@@ -9,8 +10,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePageUnverified extends StatelessWidget {
+  const HomePageUnverified({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +95,7 @@ class HomePage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        child: const Column(
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -107,11 +108,23 @@ class HomePage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("Donasi Darah"),
-                                Text(
-                                  "23 Kali",
-                                  style: TextStyle(
-                                    color: Palette.primaryColor,
-                                    fontWeight: FontWeight.bold,
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const VerificationPage(),
+                                      ),
+                                    );
+                                  },
+                                  child: Text(
+                                    "Perlu Verifikasi",
+                                    style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.bold,
+                                      decoration: TextDecoration.underline,
+                                      decorationColor: Colors.blue,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -134,7 +147,7 @@ class HomePage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        child: const Column(
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -147,11 +160,23 @@ class HomePage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("Donor Selanjutnya"),
-                                Text(
-                                  "23 Juli 2024",
-                                  style: TextStyle(
-                                    color: Palette.primaryColor,
-                                    fontWeight: FontWeight.bold,
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const VerificationPage(),
+                                      ),
+                                    );
+                                  },
+                                  child: Text(
+                                    "Perlu Verifikasi",
+                                    style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.bold,
+                                      decoration: TextDecoration.underline,
+                                      decorationColor: Colors.blue,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -264,7 +289,7 @@ class HomePage extends StatelessWidget {
                   //     )
                   //   ],
                   // ),
-                  const SizedBox(height: 12),
+                  // const SizedBox(height: 12),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -296,6 +321,22 @@ class HomePage extends StatelessWidget {
                             total: '20',
                           ),
                           const SizedBox(height: 12),
+                          LocationCard(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailLocationPage(),
+                              ));
+                            },
+                            image: 'assets/hospital.jpeg',
+                            name: 'Rumah Sakit Ariya',
+                            time: '06:00 - 24:00',
+                            phone: '0812-3456-7890',
+                            collected: '30',
+                            progress: 0.9,
+                            total: '35',
+                          ),
+                          SizedBox(height: 12),
                           LocationCard(
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(

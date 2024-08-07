@@ -1,4 +1,5 @@
 import 'package:dora_app/core/palette.dart';
+import 'package:dora_app/features/home/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class VerificationPage extends StatelessWidget {
@@ -102,19 +103,28 @@ class VerificationPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 42),
                     const SizedBox(height: 86),
-                    Container(
-                      width: double.infinity,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: Palette.primaryColor,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          "Masuk",
-                          style: TextStyle(
-                            color: Palette.whiteColor,
-                            fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 48,
+                        decoration: BoxDecoration(
+                          color: Palette.primaryColor,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            "Verifikasi Akun",
+                            style: TextStyle(
+                              color: Palette.whiteColor,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),

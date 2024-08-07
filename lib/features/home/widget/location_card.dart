@@ -156,7 +156,7 @@ class LocationCard extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(
-                          width: 135,
+                          width: 215,
                         ),
                         Text(
                           "$total Liter",

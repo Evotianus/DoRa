@@ -1,4 +1,7 @@
 import 'package:dora_app/core/palette.dart';
+import 'package:dora_app/features/authentication/pages/login_page.dart';
+import 'package:dora_app/features/home/pages/home_page.dart';
+import 'package:dora_app/features/home/pages/home_page_unverified.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -101,37 +104,51 @@ class RegisterPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 32),
-                    RichText(
-                      text: const TextSpan(
-                        text: "Sudah punya akun? ",
-                        style: TextStyle(
-                          color: Palette.blackColor,
+                    GestureDetector(
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
                         ),
-                        children: [
-                          TextSpan(
-                            text: "Masuk!",
-                            style: TextStyle(
-                              color: Palette.primaryColor,
-                              fontWeight: FontWeight.bold,
-                            ),
+                      ),
+                      child: RichText(
+                        text: const TextSpan(
+                          text: "Sudah punya akun? ",
+                          style: TextStyle(
+                            color: Palette.blackColor,
                           ),
-                        ],
+                          children: [
+                            TextSpan(
+                              text: "Masuk!",
+                              style: TextStyle(
+                                color: Palette.primaryColor,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(height: 86),
-                    Container(
-                      width: double.infinity,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: Palette.primaryColor,
-                        borderRadius: BorderRadius.circular(8),
+                    GestureDetector(
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const HomePageUnverified(),
+                        ),
                       ),
-                      child: const Center(
-                        child: Text(
-                          "Masuk",
-                          style: TextStyle(
-                            color: Palette.whiteColor,
-                            fontWeight: FontWeight.bold,
+                      child: Container(
+                        width: double.infinity,
+                        height: 48,
+                        decoration: BoxDecoration(
+                          color: Palette.primaryColor,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            "Masuk",
+                            style: TextStyle(
+                              color: Palette.whiteColor,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
